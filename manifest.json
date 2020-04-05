@@ -6,7 +6,8 @@
 
   "description": "Allows the user to highlight and store text from webpages; which can later be viewed in the extensions webpage.",
   "icons": {
-    "48": "icons/marker-64.png"
+    "48": "icons/marker-48.png",
+    "64": "icons/marker-64.png"
   },
 
   "permissions": [
@@ -21,12 +22,6 @@
     },
     "default_title": "Highlight"
   },
-
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "quicknote-example@mozilla.org"
-    }
-  }, 
 
   "background": {
       "scripts": [
