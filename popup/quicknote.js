@@ -75,7 +75,16 @@ function displayNote(title, body) {
   noteDisplay.setAttribute('class', 'noteDisplay w3-display-container w3-panel w3-white');
   notePara.setAttribute('class', 'w3-text-blue w3-small')
 
-  noteH.innerHTML = title.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+  // Use DOMParser instead of directly changing the innerHTML value. 
+  // Fixes the unsafe assignment to innerHTML error. 
+  const parser = new DOMParser()
+  const parsed = parser.parseFromString(title, 'text/html')
+  const tags = parsed.getElementsByTagName('body')
+
+  for (const tag of tags) {
+    noteH.appendChild(tag);
+  }
+
   notePara.textContent = body;
   notePara.href = body;
   // Open in new tab.
