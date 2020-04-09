@@ -66,20 +66,22 @@ function displayNote(title, body) {
   /* create note display box */
   var note = document.createElement('div');
   var noteDisplay = document.createElement('div');
-  var noteH = document.createElement('h2');
+  var noteH = document.createElement('p');
   var notePara = document.createElement('a');
   var deleteBtn = document.createElement('button');
   var clearFix = document.createElement('div');
 
   note.setAttribute('class','note');
+  noteDisplay.setAttribute('class', 'noteDisplay w3-display-container w3-panel w3-white');
+  notePara.setAttribute('class', 'w3-text-blue w3-small')
 
-  noteH.textContent = title;
+  noteH.innerHTML = title.replace(/(?:\r\n|\r|\n)/g, '<br/>');
   notePara.textContent = body;
   notePara.href = body;
   // Open in new tab.
   notePara.target = "_blank";
 
-  deleteBtn.setAttribute('class','delete');
+  deleteBtn.setAttribute('class','delete w3-display-bottomright w3-margin');
   deleteBtn.textContent = 'Delete note';
   clearFix.setAttribute('class','clearfix');
 
@@ -107,9 +109,13 @@ function displayNote(title, body) {
   var updateBtn = document.createElement('button');
   var cancelBtn = document.createElement('button');
 
-  updateBtn.setAttribute('class','update');
+  noteEdit.setAttribute('class', 'noteEdit w3-display-container w3-panel w3-white')
+  noteTitleEdit.setAttribute('class', 'w3-input')
+  noteBodyEdit.setAttribute('class', 'w3-input')
+
+  updateBtn.setAttribute('class','update w3-margin');
   updateBtn.textContent = 'Update note';
-  cancelBtn.setAttribute('class','cancel');
+  cancelBtn.setAttribute('class','cancel w3-margin');
   cancelBtn.textContent = 'Cancel update';
 
   noteEdit.appendChild(noteTitleEdit);
@@ -121,6 +127,7 @@ function displayNote(title, body) {
 
   noteEdit.appendChild(clearFix2);
   clearFix2.setAttribute('class','clearfix');
+
 
   note.appendChild(noteEdit);
 

@@ -3,25 +3,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="quicknote.css"/>
+    <link rel="stylesheet" href="w3.css"/>
   </head>
 
-<body>
-  <h1>Saved items</h1>
-  <button class="export">Export to Markdown</button>
-  <button class="clear">Clear all notes</button>
-  <div class="outer-wrapper">
+<body class="w3-light-grey">
 
-    <div class="new-note">
+  <div class="outer-wrapper w3-container w3-content">
 
-      <textarea placeholder="Content"></textarea>
-      <input type="text" placeholder="Source URL">
+    <h2 class="w3-center">
+      <img src="../icons/marker-32.png">
+      <strong> Highlight </strong> 
+    </h2>
+
+    <button class="export">Export to Markdown</button>
+    <button class="clear w3-right">Clear all notes</button>
+
+    <div class="new-note w3-panel w3-white w3-display-container w3-padding">
+
+      <textarea class="w3-input" placeholder="Content"></textarea>
+      <input class="w3-input" type="text" placeholder="Source URL">
       
       <button class="add">Add note</button>
       <div class="clearfix"></div>
     </div>
-    
-    <div class="note-container"></div>
+
+    <div class="note-container w3-padding"></div>
   </div>
 
   <script src="quicknote.js"></script>
