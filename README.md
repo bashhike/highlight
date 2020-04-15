@@ -1,4 +1,4 @@
-# Highlight
+# Highlight ![](icons/marker-32.png)
 
 A persistent minimal note taking application — highlight and save content from webpages along with it's source information. You can later see a curated list of all the content that you've highlighted by clicking the extension button.
 
